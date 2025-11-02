@@ -1,0 +1,45 @@
+DROP DATABASE IF EXISTS mecanica_motomax_luisricardo;
+
+CREATE DATABASE IF NOT EXISTS mecanica_motomax_luisricardo;
+
+USE mecanica_motomax_luisricardo;
+
+CREATE TABLE IF NOT EXISTS users(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(150) NOT NULL,
+    sexo ENUM('M', 'F'),
+    email VARCHAR(150) NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS pecas(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    marca VARCHAR(100) NOT NULL,
+    categoria VARCHAR(100),
+    quantidade INT NOT NULL,
+    user_id INT NOT NULL,
+    FOREIGN KEY(user_id) REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS motos(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    modelo VARCHAR(100) NOT NULL,
+    marca VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    pecas_id INT NOT NULL,
+    FOREIGN KEY(pecas_id) REFERENCES pecas(id)
+);
+
+/*----------------------*/
+
+
+use mecanica_motomax_luisricardo;
+
+INSERT INTO users (nome, sexo, email, senha)
+VALUES ('admin', 'M', 'admin@gmail.com', 'admin123');
+
+INSERT INTO pecas () VALUES (DEFAULT,"Rodas Aro 10","Pireli","Roda",10,1);
+
+INSERT INTO motos () VALUES (DEFAULT,"Bros","Yamara","Troca de Rodas",1);
+
