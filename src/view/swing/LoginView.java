@@ -15,7 +15,7 @@ public class LoginView extends JDialog {
     private final UserDAO userDAO = DAOFactory.createUserNDAO();
 
     public LoginView(JFrame parent) {
-        super(parent, "Facebook CRUD - Login", true);
+        super(parent, "Mecânica Motos - Login", true);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
