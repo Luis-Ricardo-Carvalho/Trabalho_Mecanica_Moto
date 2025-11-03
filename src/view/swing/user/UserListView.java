@@ -127,7 +127,7 @@ public class UserListView extends JDialog implements IUserListView {
                 case 1: return u.getName();
                 case 2: return u.getGender();
                 case 3: return u.getEmail();
-                case 4: return u.getSenha(); 
+                case 4: return "*****"; 
                 default: return null;
             }
         }
